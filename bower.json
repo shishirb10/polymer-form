@@ -1,0 +1,33 @@
+{
+  "name": "iron-form",
+  "version": "",
+  "description": "Ajax for in polymer",
+  "keywords": [],
+  "authors": [
+    "Shishir"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#1.9 - 2",
+    "iron-ajax": "PolymerElements/iron-ajax#1 - 2",
+    "iron-form": "PolymerElements/iron-form#^3.0.1"
+  },
+  "devDependencies": {
+    "iron-component-page": "PolymerElements/iron-component-page#1 - 2",
+    "iron-form": "PolymerElements/iron-form#1 - 2",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#1 - 2",
+    "paper-button": "PolymerElements/paper-button#1 - 2",
+    "paper-checkbox": "PolymerElements/paper-checkbox#1 - 2",
+    "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#1 - 2",
+    "paper-input": "PolymerElements/paper-input#1 - 2",
+    "paper-item": "PolymerElements/paper-item#1 - 2",
+    "paper-listbox": "PolymerElements/paper-listbox#1 - 2",
+    "paper-spinner": "PolymerElements/paper-spinner#1 - 2",
+    "paper-styles": "PolymerElements/paper-styles#1 - 2",
+    "web-animations-js": "web-animations/web-animations-js#^2.2",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "webcomponentsjs": "^1.0.0"
+  }
+}

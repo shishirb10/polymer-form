@@ -1,0 +1,68 @@
+<dom-module id="reg-form">
+    <template>
+
+        <iron-form id="newform">
+            <form>
+                <paper-input label="First name" auto-validate required pattern="[a-zA-Z]*"  error-message="Enter a valid first name " name="firstName" value="{{firstName}}"></paper-input>
+                <paper-input label="Last name" required auto-validate pattern="[a-zA-Z]*" error-message="Enter a valid last name " name="lastName" value="{{lastName}}"></paper-input>
+                <paper-input id="email" label="Email" required auto-validate pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" error-message="Enter a valid email address" name="email" value="{{email}}"></paper-input>          
+                <paper-dropdown-menu label="Designation" name="designation">
+                    <paper-listbox class="dropdown-content" slot="dropdown-content">
+                        <paper-item value="Manager">Manager</paper-item>
+                        <paper-item value="Tech Lead">Tech Lead</paper-item>
+                        <paper-item value="Software Engg">Software Engg</paper-item>
+                    </paper-listbox>
+                </paper-dropdown-menu>
+                <br>
+                <paper-button raised on-click="submit">Submit</paper-button>
+                <paper-button raised on-click="reset">Reset</paper-button>
+            </form>
+            <br>
+            <div class="output"></div>
+        </iron-form>
+        <!--Iron form end here-->
+
+        <!--Iron form end here-->
+    </template>
+    <script>
+class RegForm extends Polymer.Element {
+      static get is() { return 'reg-form'; }
+
+      static get properties() {
+        return ;
+      }
+
+      constructor() {
+        super();
+      }
+      connectedCallback() {
+                super.connectedCallback();
+                const form = this.$.newform;
+               
+                form.addEventListener('iron-form-submit', function(event) {
+                    console.log(event);
+                this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
+            });
+            }
+
+      submit() {
+          window.x = this.$.newform;
+        //If the form is not valid return
+        if(!this.$.newform.validate()){
+          return
+        }else{
+            this.$.newform.submit();
+        }       
+      }
+      reset() {
+                this.$.newform.reset();
+                this.$.newform.querySelector('.output').innerHTML = '';
+            }
+            ready() {
+                super.ready();
+            }
+    }
+
+    window.customElements.define(RegForm.is, RegForm);
+  </script>
+</dom-module>
